@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Legacy Fabric Versions</title>
+        <title>Quilt Versions</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/default.min.css">
         <link rel="stylesheet" href="styles.css">
@@ -25,7 +25,7 @@
             <div class="container">
                 <div class="row">
                     <a id="home-link" href="#" class="col-auto home">
-                    <img class="logo" src="https://legacyfabric.net/res/img/logo.png"><div>legacy<br>fabric<br>versions</div>
+                    <img class="logo" src="https://raw.githubusercontent.com/QuiltMC/art/master/brand/svg/quilt_logo_transparent.svg"><div>quilt<br>versions</div>
                     </a>
                     <div class="col">
                     </div>
@@ -41,9 +41,9 @@
         <div class="content">
             <div class="container">
                 <div class="row justify-content-center">
-                    <a class="badge" href=" https://legacyfabric.net/discord"><img alt="Discord" src="https://img.shields.io/discord/679635419045822474.svg?style=for-the-badge&logo=discord&label=Discord&labelColor=748ad6&logoColor=white&color=0DC634"></a>
-                    <a class="badge" href="https://github.com/legacy-fabric/yarn"><img alt="Yarn GitHub" src="https://img.shields.io/github/stars/Legacy-Fabric/yarn.svg?style=for-the-badge&logo=github&label=Yarn&labelColor=24292e&logoColor=white"></a>
-                    <a class="badge" href="https://github.com/legacy-fabric/fabric"><img alt="Legacy Fabric API GitHub" src="https://img.shields.io/github/stars/Legacy-Fabric/fabric?style=for-the-badge&logo=github&label=Legacy Fabric API&labelColor=24292e&logoColor=white"></a>
+                    <a class="badge" href=" https://quiltmc.org/discord"><img alt="Discord" src="https://img.shields.io/discord/679635419045822474.svg?style=for-the-badge&logo=discord&label=Discord&labelColor=748ad6&logoColor=white&color=0DC634"></a>
+                    <a class="badge" href="https://github.com/QuiltMC/yarn"><img alt="Yarn GitHub" src="https://img.shields.io/github/stars/QuiltMC/yarn.svg?style=for-the-badge&logo=github&label=Yarn&labelColor=24292e&logoColor=white"></a>
+                    <a class="badge" href="https://github.com/QuiltMC/quilt"><img alt="Quilt API GitHub" src="https://img.shields.io/github/stars/QuiltMC/quilt?style=for-the-badge&logo=github&label=Quilt API&labelColor=24292e&logoColor=white"></a>
                 </div>
                 <div class="row justify-content-center">
                     <div class="version-card mcversion">
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <p><b>Note: </b><code>legacy-fabric-api</code> version may not be the correct version for the given minecraft version. See the <a href="https://www.curseforge.com/minecraft/mc-mods/legacy-fabric-api/files">CurseForge</a> page to verify that you are using the correct version.</p>
+                    <p><b>Note: </b><code>quilt-api</code> version may not be the correct version for the given minecraft version. See the <a href="https://www.curseforge.com/minecraft/mc-mods/quilt-api/files">CurseForge</a> page to verify that you are using the correct version.</p>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -64,11 +64,11 @@
                             <div name="code">
                                     <pre><code id="build-gradle" class="properties"><a class="button" onclick="copyDependencies(this)"><svg viewBox="0 0 16 16" width="16" height="16"><use href="#svg-copy"/></svg></a>dependencies {
     minecraft "com.mojang:minecraft:{minecraft_version}"
-    mappings "net.fabricmc:yarn:{yarn_version}:v2"
-    modImplementation "net.fabricmc:fabric-loader:{loader_version}"
+    mappings "{yarn_maven}:v2"
+    modImplementation "{loader_maven}"
     
-    // Legacy Fabric API
-    modImplementation "{fabric_maven}{fabric_version}"
+    // Quilt API
+    modImplementation "{quilt_maven}{quilt_version}"
 }</code></pre>
                             </div>
                         </div>
@@ -80,8 +80,8 @@
 yarn_mappings={yarn_version}
 loader_version={loader_version}
 
-# Legacy Fabric API
-fabric_version={fabric_version}
+# Quilt API
+quilt_version={quilt_version}
 </code>
 </pre>
                             </div>
@@ -90,7 +90,7 @@ fabric_version={fabric_version}
                     <div class="col">
                         <div class="version-card">
                             <div class="title">Migrating Mappings</div>
-                            <div class="text">Mappings can be auto updated by using the following command. See the <a href="https://fabricmc.net/wiki/tutorial:migratemappings">wiki page</a> for more help.</div>
+                            <div class="text">Mappings can be auto updated by using the following command. See the <a href="https://quiltmc.net/wiki/tutorial:migratemappings">wiki page</a> for more help.</div>
                             <div name="code">
                                 <pre><code class="bash">gradlew migrateMappings --mappings "{yarn_version}"</code></pre>
                             </div>
@@ -107,7 +107,7 @@ fabric_version={fabric_version}
         </div>
         <div class="footer">
             Want to help improve this page?
-            <a id="source-button" class="button white-outline " href="https://github.com/Prospector/fabric-versions"
+            <a id="source-button" class="button white-outline " href="https://github.com/Prospector/quilt-versions"
                 target="_blank">
             <img class="accent-invert" src="github.svg">
             View source on GitHub
@@ -126,11 +126,10 @@ fabric_version={fabric_version}
     </script>
 
     <script>
-        var META_URL = 'https://meta.legacyfabric.net'
-        //var MAVEN_URL = 'https://maven.legacyfabric.net'
-        var MAVEN_URL = 'https://maven.skyrising.xyz'
-        var MAVEN_GROUP = 'net.legacyfabric.legacy-fabric-api'
-        var MAVEN_ARTIFACT = 'legacy-fabric-api'
+        var META_URL = 'https://meta.quiltmc.org'
+        var MAVEN_URL = 'https://maven.quiltmc.org'
+        var MAVEN_GROUP = 'org.quiltmc.quilt-api'
+        var MAVEN_ARTIFACT = 'quilt-api'
         document.addEventListener('DOMContentLoaded', function () {
         
             var themeButton = document.getElementById("theme-button");
@@ -147,7 +146,7 @@ fabric_version={fabric_version}
                 return target.replace(new RegExp(search, 'g'), replacement);
             };
         
-            getJSON(META_URL + '/v1/versions/game', function (data) {
+            getJSON(META_URL + '/v3/versions/game', function (data) {
                 populateVersions(data);
             });
         
@@ -202,17 +201,29 @@ fabric_version={fabric_version}
                 version = urlParams.get("version");
             }
         
-            getJSON(META_URL + "/v1/versions/loader/" + version, function (data) {
+            getJSON(META_URL + "/v3/versions/loader/" + version, function (data) {
                 var meta = data[0];
                 var codeBlocks = document.getElementsByName("code");
                 for (i in codeBlocks) {
                     var block = codeBlocks[i];
                     if (!(block instanceof Node)) continue
-                    block.innerHTML = block.innerHTML.replaceAll("{minecraft_version}", meta.mappings.gameVersion);
-                    block.innerHTML = block.innerHTML.replaceAll("{yarn_version}", meta.mappings.version);
+                    block.innerHTML = block.innerHTML.replaceAll("{minecraft_version}", meta.intermediary.version);
+                    block.innerHTML = block.innerHTML.replaceAll("{loader_maven}", meta.loader.maven);
                     block.innerHTML = block.innerHTML.replaceAll("{loader_version}", meta.loader.version);
                 }
             });
+
+            getJSON(META_URL + "/v3/versions/yarn/" + version, function (data) {
+                var meta = data[0];
+                var codeBlocks = document.getElementsByName("code");
+                for (i in codeBlocks) {
+                    var block = codeBlocks[i];
+                    if (!(block instanceof Node)) continue
+                    block.innerHTML = block.innerHTML.replaceAll("{yarn_maven}", meta.maven);
+                    block.innerHTML = block.innerHTML.replaceAll("{yarn_version}", meta.version);
+                }
+            });
+        
         
             var versionUrl = MAVEN_URL + '/' + MAVEN_GROUP.replace(/\./g, '/') + '/' + MAVEN_ARTIFACT + '/maven-metadata.xml';
             var mavenStr = MAVEN_GROUP + ':' + MAVEN_ARTIFACT + ':';
@@ -223,8 +234,8 @@ fabric_version={fabric_version}
                     for (i in codeBlocks) {
                         var block = codeBlocks[i];
                         if (!(block instanceof Node)) continue
-                        block.innerHTML = block.innerHTML.replaceAll("{fabric_version}", version);
-                        block.innerHTML = block.innerHTML.replaceAll("{fabric_maven}", mavenStr);
+                        block.innerHTML = block.innerHTML.replaceAll("{quilt_version}", version);
+                        block.innerHTML = block.innerHTML.replaceAll("{quilt_maven}", mavenStr);
                     }
                 })
         
