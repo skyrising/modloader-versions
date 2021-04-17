@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Fabric Versions</title>
+        <title>Legacy Fabric Versions</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/default.min.css">
         <link rel="stylesheet" href="styles.css">
@@ -12,24 +12,27 @@
         <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
         <script>
             if (!Cookies.get('theme')) {
-                Cookies.set('theme', 'light')
+                Cookies.set('theme', 'dark')
             }
             if (Cookies.get('theme')) {
                 document.body.id = Cookies.get('theme')
             }
         </script>
+        <svg width="0" height="0"><defs>
+        <path id="svg-copy" fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path>
+        </defs></svg>
         <div class="header">
             <div class="container">
                 <div class="row">
                     <a id="home-link" href="#" class="col-auto home">
-                    <img class="logo" src="fabricVersions.svg">
+                    <img class="logo" src="https://legacyfabric.net/res/img/logo.png"><div>legacy<br>fabric<br>versions</div>
                     </a>
                     <div class="col">
                     </div>
                     <div class="col-auto align-self-center">
                         <a class="button white-outline hidden" id="theme-button" href="#">
                         <img id="theme-icon" class="accent-invert" src="dark.svg">
-                        <span id="theme-text">Dark</span>
+                        <span id="theme-text">light</span>
                         </a>
                     </div>
                 </div>
@@ -38,9 +41,9 @@
         <div class="content">
             <div class="container">
                 <div class="row justify-content-center">
-                    <a class="badge" href="https://discord.gg/v6v4pMv"><img alt="Discord" src="https://img.shields.io/discord/507304429255393322.svg?style=for-the-badge&logo=discord&label=Discord&labelColor=748ad6&logoColor=white&color=0DC634"></a>
-                    <a class="badge" href="https://github.com/fabricmc/yarn"><img alt="Yarn GitHub" src="https://img.shields.io/github/stars/FabricMC/yarn.svg?style=for-the-badge&logo=github&label=Yarn&labelColor=24292e&logoColor=white"></a>
-                    <a class="badge" href="https://github.com/fabricmc/fabric"><img alt="Fabric API GitHub" src="https://img.shields.io/github/stars/FabricMC/fabric?style=for-the-badge&logo=github&label=Fabric API&labelColor=24292e&logoColor=white"></a>
+                    <a class="badge" href=" https://legacyfabric.net/discord"><img alt="Discord" src="https://img.shields.io/discord/679635419045822474.svg?style=for-the-badge&logo=discord&label=Discord&labelColor=748ad6&logoColor=white&color=0DC634"></a>
+                    <a class="badge" href="https://github.com/legacy-fabric/yarn"><img alt="Yarn GitHub" src="https://img.shields.io/github/stars/Legacy-Fabric/yarn.svg?style=for-the-badge&logo=github&label=Yarn&labelColor=24292e&logoColor=white"></a>
+                    <a class="badge" href="https://github.com/legacy-fabric/fabric"><img alt="Legacy Fabric API GitHub" src="https://img.shields.io/github/stars/Legacy-Fabric/fabric?style=for-the-badge&logo=github&label=Legacy Fabric API&labelColor=24292e&logoColor=white"></a>
                 </div>
                 <div class="row justify-content-center">
                     <div class="version-card mcversion">
@@ -49,7 +52,7 @@
                     </div>
                 </div>
                 <div class="row justify-content-center">
-                    <p><b>Note: </b><code>fabric-api</code> version may not be the correct version for the given minecraft version. See the <a href="https://minecraft.curseforge.com/projects/fabric/files">CurseForge</a> page to verify that you are using the correct version.</p>
+                    <p><b>Note: </b><code>legacy-fabric-api</code> version may not be the correct version for the given minecraft version. See the <a href="https://www.curseforge.com/minecraft/mc-mods/legacy-fabric-api/files">CurseForge</a> page to verify that you are using the correct version.</p>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -59,12 +62,12 @@
                                 build.gradle
                             </div>
                             <div name="code">
-                                    <pre><code class="gradle">dependencies {
+                                    <pre><code id="build-gradle" class="properties"><a class="button" onclick="copyDependencies(this)"><svg viewBox="0 0 16 16" width="16" height="16"><use href="#svg-copy"/></svg></a>dependencies {
     minecraft "com.mojang:minecraft:{minecraft_version}"
     mappings "net.fabricmc:yarn:{yarn_version}:v2"
     modImplementation "net.fabricmc:fabric-loader:{loader_version}"
     
-    // Fabric API
+    // Legacy Fabric API
     modImplementation "{fabric_maven}{fabric_version}"
 }</code></pre>
                             </div>
@@ -72,15 +75,15 @@
                     </div>
                     <div class="col">
                         <div class="version-card">
-                            <div class="title">gradle.properties<div name="code">
-                                    <pre><code class="properties">minecraft_version={minecraft_version}
+                            <div class="title">gradle.properties</div><div name="code">
+                                    <pre><code id="gradle-properties" class="properties"><a class="button" onclick="copyDependencies(this)"><svg viewBox="0 0 16 16" width="16" height="16"><use href="#svg-copy"/></svg></a>minecraft_version={minecraft_version}
 yarn_mappings={yarn_version}
 loader_version={loader_version}
 
-# Fabric API
+# Legacy Fabric API
 fabric_version={fabric_version}
-</code></pre>
-                                </div>
+</code>
+</pre>
                             </div>
                         </div>
                     </div>
@@ -95,9 +98,8 @@ fabric_version={fabric_version}
                     </div>
                     <div class="col">
                         <div class="version-card">
-                            <div class="title">Loom Versions</div>
-                            <div class="recommended-loom">Recommended: <span class="version">0.2.7-SNAPSHOT</span></div>
-                            <div class="text"><b>Note: </b>When upgrading to Loom 0.2.6 from older versions make sure to take a look at the upgrade guide <a href="https://gist.github.com/modmuss50/5e9415c7b6ea0fc96e56002a2b5f4fc7">here</a>.</div>
+                            <div class="title">Loom Version</div>
+                            <div class="recommended-loom">Recommended: <span class="version">0.6-SNAPSHOT</span></div>
                         </div>
                     </div>
                 </div>
@@ -105,7 +107,7 @@ fabric_version={fabric_version}
         </div>
         <div class="footer">
             Want to help improve this page?
-            <a id="source-button" class="button white-outline " href="https://github.com/Prospector/prospector.github.io"
+            <a id="source-button" class="button white-outline " href="https://github.com/Prospector/fabric-versions"
                 target="_blank">
             <img class="accent-invert" src="github.svg">
             View source on GitHub
@@ -124,6 +126,11 @@ fabric_version={fabric_version}
     </script>
 
     <script>
+        var META_URL = 'https://meta.legacyfabric.net'
+        //var MAVEN_URL = 'https://maven.legacyfabric.net'
+        var MAVEN_URL = 'https://maven.skyrising.xyz'
+        var MAVEN_GROUP = 'net.legacyfabric.legacy-fabric-api'
+        var MAVEN_ARTIFACT = 'legacy-fabric-api'
         document.addEventListener('DOMContentLoaded', function () {
         
             var themeButton = document.getElementById("theme-button");
@@ -140,7 +147,7 @@ fabric_version={fabric_version}
                 return target.replace(new RegExp(search, 'g'), replacement);
             };
         
-            getJSON("https://meta.fabricmc.net/v1/versions/game", function (data) {
+            getJSON(META_URL + '/v1/versions/game', function (data) {
                 populateVersions(data);
             });
         
@@ -189,57 +196,33 @@ fabric_version={fabric_version}
             var urlParams = new URLSearchParams(window.location.search);
         
             var version = versionList.value;
+            var branch = version;
         
             if (urlParams.has("version")) {
                 version = urlParams.get("version");
             }
         
-            getJSON("https://meta.fabricmc.net/v1/versions/loader/" + version, function (data) {
+            getJSON(META_URL + "/v1/versions/loader/" + version, function (data) {
                 var meta = data[0];
                 var codeBlocks = document.getElementsByName("code");
                 for (i in codeBlocks) {
                     var block = codeBlocks[i];
+                    if (!(block instanceof Node)) continue
                     block.innerHTML = block.innerHTML.replaceAll("{minecraft_version}", meta.mappings.gameVersion);
                     block.innerHTML = block.innerHTML.replaceAll("{yarn_version}", meta.mappings.version);
                     block.innerHTML = block.innerHTML.replaceAll("{loader_version}", meta.loader.version);
                 }
             });
         
-            var versionUrl = "https://maven.fabricmc.net/net/fabricmc/fabric/maven-metadata.xml";
-            var mavenStr = "net.fabricmc:fabric:";
-        
-            var newApi = true;
-        
-            for(i in mcVersions){
-                var vi = mcVersions[i].version;
-                if(vi === "1.14"){
-                    newApi = false;
-                    break;
-                }
-                if(vi === version){
-                    break;
-                }
-            }
-        
-            if (newApi) {
-                versionUrl = "https://maven.fabricmc.net/net/fabricmc/fabric-api/fabric-api/maven-metadata.xml";
-                mavenStr = "net.fabricmc.fabric-api:fabric-api:";
-            }
-        
-            var branch = "1.15"
-            //TODO make this better
-            if(version === "1.14.4"){
-                branch = "1.14"
-            }
-            if (version.startsWith("20w")) {
-                branch = "1.16"
-            }
+            var versionUrl = MAVEN_URL + '/' + MAVEN_GROUP.replace(/\./g, '/') + '/' + MAVEN_ARTIFACT + '/maven-metadata.xml';
+            var mavenStr = MAVEN_GROUP + ':' + MAVEN_ARTIFACT + ':';
         
             findVersion(versionUrl, branch,
                 function (version) {
                     var codeBlocks = document.getElementsByName("code");
                     for (i in codeBlocks) {
                         var block = codeBlocks[i];
+                        if (!(block instanceof Node)) continue
                         block.innerHTML = block.innerHTML.replaceAll("{fabric_version}", version);
                         block.innerHTML = block.innerHTML.replaceAll("{fabric_maven}", mavenStr);
                     }
@@ -318,7 +301,7 @@ fabric_version={fabric_version}
         function toggleTheme() {
             var theme = Cookies.get('theme')
             if (!theme) {
-                Cookies.set('theme', 'light')
+                Cookies.set('theme', 'dark')
             } else {
                 if (theme === "dark") {
                     Cookies.set('theme', 'light')
@@ -349,6 +332,21 @@ fabric_version={fabric_version}
                 setTimeout(() => themeButton.classList.add("animate"), 0)
             }
         }
-        
+
+
+        // Copying the dependencies text
+        var copyArea = document.createElement("TEXTAREA");
+        copyArea.style.height = "0";
+        copyArea.style.overflow = "hidden";
+        copyArea.style.position = "fixed";
+
+        function copyDependencies(button) {
+            copyArea.innerHTML = button.parentElement.innerText;
+
+            document.body.appendChild(copyArea);
+            copyArea.select();
+            document.execCommand("copy");
+            document.body.removeChild(copyArea);
+        }
     </script>
 </html>
